@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.0" client="site" method="upgrade">
+	<name>MOD_JD_FACEBOOK_PAGE_XML_NAME</name>
+	<author>JoomDev</author>
+	<creationDate>April 2019</creationDate>
+	<copyright>Copyright (C) 2019 Joomdev, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@joomdev.com</authorEmail>
+	<authorUrl>https://www.joomdev.com</authorUrl>
+	<version>1.0</version>
+	<description>MOD_JD_FACEBOOK_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_jdfacebookpage">mod_jdfacebookpage.php</filename>
+		<folder>tmpl</folder>
+		<filename module="mod_jdfacebookpage">mod_jdfacebookpage.xml</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_jdfacebookpage.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_jdfacebookpage.sys.ini</language>
+	</languages>
+	<updateservers>
+		<server type="extension" priority="1" name="mod_jdfacebookpage">https://cdn.joomdev.com/updates/mod_jdfacebooklikebox.xml</server>
+	</updateservers>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="fb_id" type="text" default="" label="MOD_JDFACEBOOKPAGE_XML_FB_ID_LABEL" description="MOD_JDFACEBOOKPAGE_XML_FB_ID_DESCRIPTION" />
+				<field name="fb_url" type="url" default="https://www.facebook.com/joomdev" label="MOD_JDFACEBOOKPAGE_XML_FB_URL_LABEL" description="MOD_JDFACEBOOKPAGE_XML_FB_URL_DESCRIPTION" />
+				<field name="fbradiovalue" type="radio" class="btn-group btn-group-yesno" default="timeline" label="MOD_JDFACEBOOKPAGE_XML_FBRADIOVALUE_LABEL" description="MOD_JDFACEBOOKPAGE_XML_FBRADIOVALUE_DESCRIPTION">
+					<option value="timeline">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="hide_cover" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_JDFACEBOOKPAGE_XML_HIDE_COVER_LABEL" description="MOD_JDFACEBOOKPAGE_XML_HIDE_COVER_DESCRIPTION">
+					<option value="true">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="face" type="radio" class="btn-group btn-group-yesno" default="true" label="MOD_JDFACEBOOKPAGE_XML_FACE_LABEL" description="MOD_JDFACEBOOKPAGE_XML_FACE_DESCRIPTION">
+					<option value="true">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="small_header" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_JDFACEBOOKPAGE_XML_SMALL_HEADER_LABEL" description="MOD_JDFACEBOOKPAGE_XML_SMALL_HEADER_DESCRIPTION">
+					<option value="true">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="adapt_container_width" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_JDFACEBOOKPAGE_XML_FB_DIMENSION_LABEL" description="MOD_JDFACEBOOKPAGE_XML_FB_DIMENSION_DESCRIPTION">
+					<option value="true">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="fb_width" type="text" showon="adapt_container_width:true" label="MOD_JDFACEBOOKPAGE_XML_FB_WIDTH_LABEL" hint="MOD_JDFACEBOOKPAGE_XML_FB_WIDTH_HINT" description="MOD_JDFACEBOOKPAGE_XML_FB_WIDTH_DESCRIPTION" default="250"/>
+				<field name="fb_height" type="text" showon="adapt_container_width:true" label="MOD_JDFACEBOOKPAGE_XML_FB_HEIGHT_LABEL" hint="MOD_JDFACEBOOKPAGE_XML_FB_HEIGHT_HINT" description="MOD_JDFACEBOOKPAGE_XML_FB_HEIGHT_DESCRIPTION" default="400"/>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="custom_css" type="textarea" label="MOD_JDFACEBOOKPAGE_XML_FB_CUSTOM_CSS_LABEL" description="MOD_JDFACEBOOKPAGE_XML_FB_CUSTOM_CSS_DESCRIPTION" />
+				<field name="moduleclass_sfx" type="textarea" label="MOD_JDFACEBOOKPAGE_XML_FB_CUSTOM_MODULE_CLASS_LABEL" description="MOD_JDFACEBOOKPAGE_XML_FB_CUSTOM_MODULE_CLASS_DESCRIPTION" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
