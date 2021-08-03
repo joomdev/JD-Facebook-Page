@@ -26,25 +26,18 @@ $custom_border_css=$params->get('custom_css');
 $moduleclass_sfx = $params->get('moduleclass_sfx');
 ?>
 
-<div style="<?php echo $custom_border_css; ?> " class="fb-page <?php echo $moduleclass_sfx;?>" 
-    data-href="<?php echo $url;?>" 
-    data-tabs="<?php echo $fbradiovalue;?>"  
-    data-width="<?php if($adapt=='0'){echo $default_width;} else {echo $width;}?>" 
-    data-height="<?php if($adapt=='0'){echo $default_height;} else {echo $height;} ?>" 
-    data-small-header="<?php echo $header;?>" 
-    data-adapt-container-width="<?php $adapt;?>"
-    data-hide-cover="<?php echo $cover;?>" 
-    data-hide-cta="<?php echo $button;?>" 
-    data-show-facepile="<?php echo $facepile;?>">
-    <div class="fb-xfbml-parse-ignore"></div>
+<div style="<?php echo $custom_border_css; ?>" class="fb-page <?php echo $moduleclass_sfx;?>" 
+    data-href="<?php echo $url; ?>" 
+    data-tabs="<?php echo $fbradiovalue; ?>"  
+    data-width="<?php echo $adapt=='0' ? $default_width : $width; ?>" 
+    data-height="<?php echo $adapt=='0' ? $default_height : $height; ?>" 
+    data-small-header="<?php echo $header; ?>" 
+    data-adapt-container-width="<?php $adapt; ?>"
+    data-hide-cover="<?php echo $cover; ?>" 
+    data-hide-cta="<?php echo $button; ?>" 
+    data-show-facepile="<?php echo $facepile; ?>"
+>
+  <div class="fb-xfbml-parse-ignore"></div>
 </div>
 <div id="fb-root"></div>
-<script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=<?php echo $fb_appid; ?>";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=<?php echo $fb_appid; ?>&autoLogAppEvents=1"></script>
